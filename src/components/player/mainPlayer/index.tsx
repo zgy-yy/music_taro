@@ -33,7 +33,7 @@ const Index: React.FC<{
                 }, 600)
               }}
         ></View>
-        <View style={{fontSize: 'x-large'}}>{music.name}</View>
+        <View style={{fontSize: 'large'}}>{music.name}</View>
         <View style={{fontSize: 'small'}}>{mergeSinger(music.ar)}</View>
       </View>
       {/*wrapper*/}
