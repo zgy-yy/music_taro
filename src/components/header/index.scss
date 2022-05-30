@@ -1,0 +1,30 @@
+.main {
+  .logo{
+    float: left;
+    height: 100%;
+    font-size: xx-large;
+  }
+  .text{
+    height: 100%;
+    text-align: center;
+    font-size: x-large;
+  }
+
+
+  .back{
+    margin-left: 30px;
+    font-size: xx-large;
+    vertical-align: middle;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    .title{
+      display: block;
+      font-size: large;
+      white-space: nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+
+    }
+  }
+}

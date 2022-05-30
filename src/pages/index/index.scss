@@ -1,0 +1,40 @@
+.index {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.scroll {
+  flex: 1;
+  overflow-y: scroll;
+}
+
+.lists {
+  height: 120px;
+  display: flex;
+  width: 90%;
+  margin: 32px auto;
+
+
+  image {
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 30px;
+
+    .name {
+      color: whitesmoke;
+    }
+
+    .title {
+      color: #454646;
+    }
+  }
+}
+

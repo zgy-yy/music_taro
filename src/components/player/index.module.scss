@@ -1,0 +1,63 @@
+@import "src/asset/theme";
+
+.main {
+  position: relative;
+  background: $page-color;
+  height: 90px;
+  display: flex;
+
+  .coverImage {
+    height: 90px;
+    width: 90px;
+    margin: 0 10px;
+
+    image {
+      border-radius: 50%;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .msg {
+    flex-grow: 1;
+    height: 100%;
+
+    .swiper{
+      @include text-format;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .option {
+    display: flex;
+    align-items: center;
+    view {
+      margin: 0 20px;
+    }
+  }
+
+  .musicList{
+    animation: $fadeIn-animation 0.6s ease ;
+    transition: transform 0.6s ease;
+    position: absolute;
+    width: 100%;
+    bottom: 90px;
+    height: 40vh;
+    background-color: $page-color;
+    overflow-y: scroll;
+    margin: 0 auto;
+    .music{
+      width: 80%;
+      margin: 30px auto;
+      font-size: large;
+      @include text-format;
+      .singer{
+        font-size: small;
+      }
+    }
+  }
+}
+

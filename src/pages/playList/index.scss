@@ -1,0 +1,111 @@
+@import "src/asset/theme";
+
+.index {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  .header {
+    width: 100%;
+  }
+
+  .bg {
+    width: 100%;
+    z-index: -1;
+    //top: 20px;
+    position: absolute;
+    background-size: cover;
+    padding-bottom: 30vh;
+    filter: blur(56px);
+  }
+  .dec {
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    height: 28vh;
+    padding-top: 60px;
+    .img {
+      height: 260px;
+      flex-shrink: 0;
+      margin-left: 30px;
+      image {
+        height: 100%;
+        border-radius: 20px;
+      }
+    }
+
+    .context {
+      height: 240px;
+      font-size: 20px;
+      margin: 20px 30px;
+      white-space: pre-line;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+    }
+  }
+}
+
+.scroll {
+  //height: 600px;
+  flex: 1;
+  overflow-y: scroll;
+  //transform: translateY(-30vh);
+  .list-top {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0);
+    height: 30vh;
+  }
+
+  .lists {
+    background-color: $page-color;
+  }
+}
+
+.song {
+  display: flex;
+  align-items: center;
+  width: 90vw;
+  margin: 32px auto;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+
+  .index-number {
+    //background: whitesmoke;
+    margin-right: 20px;
+  }
+
+  .name {
+    width: 80vw;
+    color: $white;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 10px 0;
+    font-size: medium;
+  }
+
+  .singer {
+    font-size: small;
+    color: $gray;
+  }
+}
+
+.selected {
+  color: $selectedColor !important;
+}
+
+.playerBar {
+  //position: fixed;
+  //bottom: 2px;
+  width: 100%;
+}
+
+.lists-bottom {
+  height: 98px;
+  width: 100%;
+}
