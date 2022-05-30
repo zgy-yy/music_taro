@@ -18,7 +18,7 @@ const Index = () => {
   const [, {navigateTo}] = useRouter();
   return (
     <View className='index'>
-      <Header></Header>
+      <Header ></Header>
       <View className='scroll'>
         <Swiper indicatorDots autoplay circular>
           {
