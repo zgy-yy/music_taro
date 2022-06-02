@@ -4,36 +4,94 @@
   height: 100vh;
   //border: 1px solid red;
   animation: $fadeIn-animation 0.6s ease;
+  animation-fill-mode: backwards;
   transition: transform 0.6s ease,background 1s ease;
   background-size: 100% 100%;
 }
 
 .main {
+  @include text-format;
   backdrop-filter: blur(130px);
+  background-color: rgba(0, 0, 0, 0.28);
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  .songName{
+    width: 65vw;
+    margin: 0 auto;
+    @include text-format
+  }
+  .songSinger{
+    width: 55vw;
+    margin: 0 auto;
+    @include text-format
+  }
 
   .wrapper {
-    //border: 1px solid red;
-    height: 80vw;
-    width: 80vw;
-    flex-grow: 1;
-    margin: 110px auto 0 auto;
-
+    border-radius: 50%;
+    height: 89vw;
+    width: 89vw;
+    margin: 50px auto 30px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(250, 249, 247, 0.14);
     .img {
       height: 80vw;
       width: 80vw;
       border-radius: 50%;
+      animation: around 39s linear infinite;
+      animation-fill-mode: forwards;
     }
   }
 
+  .lyric{
+    height: 180px;
+    text-align: center;
+    flex-grow: 1;
+    width: 90vw;
+    margin: 0 auto;
+    .curLy{
+      color: yellowgreen;
+    }
+    .lyItem{
+      //height: 50px;
+    }
+  }
+  .slider{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .press{
+      width: 300px;
+      flex-shrink: 0;
+      flex-grow: 1;
+    }
+  }
   .opts {
     align-items: center;
     padding-bottom: 90px;
+    margin-bottom: 30px;
     display: flex;
     justify-content: space-around;
     font-size: 90px;
+  }
+}
+
+@keyframes around {
+  0%{
+    transform: rotate(10deg);
+  }
+  100%{
+      transform: rotate(360deg);
+    }
+}
+@keyframes around1 {
+  0%{
+    transform: rotate(0);
+  }
+  100%{
+    transform: rotate(360deg);
   }
 }

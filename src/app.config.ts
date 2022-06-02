@@ -5,8 +5,9 @@ export default defineAppConfig({
     navigationStyle: 'custom',
   },
   tabBar: {
-    borderStyle: 'black',
-    backgroundColor:'black',
+    backgroundColor:'000',
+    selectedColor:'fee069',
+    color:'fff',
     list: [{
       pagePath: "pages/index/index",
       text: '推荐'

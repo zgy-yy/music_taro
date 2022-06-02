@@ -1,9 +1,10 @@
 import React, {useContext, useMemo, useState} from "react";
 import {Image, Swiper, SwiperItem, View, Text} from "@tarojs/components";
 import {DataContext} from "@/context/index";
-import {getBackgroundAudioManager} from "@tarojs/taro";
+import {getBackgroundAudioManager,} from "@tarojs/taro";
 import {mergeSinger} from "@/utils/index";
 import MainPlayer from "@/components/player/mainPlayer";
+import {useTabBar} from "taro-hooks";
 import style from './index.module.scss'
 
 const audioManager = getBackgroundAudioManager();
@@ -75,6 +76,7 @@ const Index: React.FC = () => {
     }
   }
 
+  const {setTabBarVisible}= useTabBar();
   //播放主页
   const [showMain, setShowMain] = useState(false)
   const [fadeOut, setFadeOut] = useState(false)
@@ -88,6 +90,7 @@ const Index: React.FC = () => {
           {
             curSong ? <MainPlayer hiddenCallBack={() => {
               setShowMain(false)
+              setTabBarVisible(true).then()
             }}
               music={curSong}
               paused={paused}
@@ -111,6 +114,7 @@ const Index: React.FC = () => {
         >
           <View className={style.coverImage} onClick={() => {
             if (!showMain) {
+              setTabBarVisible(false)
               setFadeOut(true)
               setTimeout(() => {
                 setShowMain(true)
@@ -121,7 +125,7 @@ const Index: React.FC = () => {
             }
           }}
           >
-            <Image mode='heightFix' src={curSong ? curSong.al.picUrl : ''}></Image>
+            <Image mode='aspectFill' src={curSong ? curSong.al.picUrl : ''}></Image>
           </View>
           <Swiper className={style.msg} circular
             onChange={(e) => {

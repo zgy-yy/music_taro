@@ -39,6 +39,11 @@ export function getBanner(): Promise<Banner[]> {
   }) as Promise<Banner[]>
 }
 
+export function getLyric(id:number){
+  return get('/lyric?id='+id).then(res=>{
+    return res.lrc.lyric
+  })as Promise<string>
+}
 
 export function get(url: string, params: any = {}): Promise<any> {
   return new Promise(function (resolve, reject) {
